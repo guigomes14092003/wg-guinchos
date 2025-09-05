@@ -1,125 +1,161 @@
-<!DOCTYPE html>
-<html lang="pt-BR">
+<!DOCTYPE html> <!-- Diz ao navegador que o documento usa HTML5 -->
+<html lang="pt-BR"> <!-- Define o idioma principal da página como Português do Brasil -->
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>WG Guinchos - Guincho 24h</title>
-  <style>
-    body {
-      margin: 0;
-      font-family: Arial, sans-serif;
-      background: #f9f9f9;
-      color: #333;
+  <meta charset="UTF-8"> <!-- Usa codificação UTF-8 (acentos e emojis funcionam) -->
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"> <!-- Torna o layout responsivo no celular -->
+  <title>WG Guinchos - Guincho 24h</title> <!-- Título que aparece na aba do navegador -->
+
+  <style> /* Início do CSS (estilos da página) */
+    body { /* Estilos gerais do corpo da página */
+      margin: 0; /* Remove margens padrão do navegador */
+      font-family: Arial, sans-serif; /* Fonte simples e comum em todos os sistemas */
+      background: #f9f9f9; /* Cor de fundo clara para contraste */
+      color: #333; /* Cor do texto padrão (cinza escuro) */
     }
-    header {
-      background: linear-gradient(90deg, #0033cc, #cc0000);
-      color: white;
-      text-align: center;
-      padding: 20px;
+
+    header { /* Barra do topo com gradiente azul->vermelho */
+      background: linear-gradient(90deg, #0033cc, #cc0000); /* Cores da marca */
+      color: white; /* Textos do cabeçalho em branco */
+      text-align: center; /* Centraliza textos dentro do header */
+      padding: 20px; /* Espaçamento interno para “respirar” */
     }
-    header h1 {
-      margin: 0;
-      font-size: 2rem;
+
+    header h1 { /* Título principal (nome da empresa) */
+      margin: 0; /* Remove margem padrão do h1 */
+      font-size: 2rem; /* Tamanho do título */
     }
-    header p {
-      margin: 5px 0 0;
+
+    header p { /* Subtítulo do cabeçalho */
+      margin: 5px 0 0; /* Pequeno espaço acima, nada abaixo */
     }
-    section {
-      padding: 40px 20px;
-      max-width: 1000px;
-      margin: auto;
+
+    section { /* Cada bloco de conteúdo principal */
+      padding: 40px 20px; /* Espaço interno (vertical e horizontal) */
+      max-width: 1000px; /* Largura máxima para não “esticar” em telas grandes */
+      margin: auto; /* Centraliza a seção na página */
     }
-    h2 {
-      color: #0033cc;
-      text-align: center;
-      margin-bottom: 20px;
+
+    h2 { /* Títulos das seções (Sobre, Serviços) */
+      color: #0033cc; /* Azul da marca */
+      text-align: center; /* Centraliza o texto */
+      margin-bottom: 20px; /* Espaço abaixo do título */
     }
-    .servicos {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-      gap: 20px;
+
+    .servicos { /* Grid que organiza os cards de serviço */
+      display: grid; /* Ativa o CSS Grid */
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); /* Colunas responsivas (>=250px) */
+      gap: 20px; /* Espaço entre os cards */
     }
-    .card {
-      background: white;
-      border-radius: 10px;
-      padding: 20px;
-      box-shadow: 0 4px 6px rgba(0,0,0,0.1);
-      text-align: center;
+
+    .card { /* Cartão individual de serviço */
+      background: white; /* Fundo branco para destacar no cinza */
+      border-radius: 10px; /* Cantos arredondados */
+      padding: 20px; /* Espaço interno */
+      box-shadow: 0 4px 6px rgba(0,0,0,0.1); /* Sombra suave (profundidade) */
+      text-align: center; /* Centraliza textos dentro do card */
     }
-    .card h3 {
-      color: #cc0000;
+
+    .card h3 { /* Título dentro do card */
+      color: #cc0000; /* Vermelho da marca para contraste com o h2 azul */
     }
-    footer {
-      background: #0033cc;
-      color: white;
-      text-align: center;
-      padding: 15px;
-      margin-top: 20px;
+
+    footer { /* Rodapé da página */
+      background: #0033cc; /* Fundo azul sólido */
+      color: white; /* Texto branco para contraste */
+      text-align: center; /* Centralizado */
+      padding: 15px; /* Espaçamento interno */
+      margin-top: 20px; /* Afasta do conteúdo acima */
     }
-    /* Botão WhatsApp pulsante */
-    .whatsapp-button {
-      position: fixed;
-      bottom: 20px;
-      right: 20px;
-      background: #25D366;
-      color: white;
-      border-radius: 50%;
-      padding: 15px;
-      font-size: 30px;
-      text-align: center;
-      text-decoration: none;
-      box-shadow: 0 4px 6px rgba(0,0,0,0.2);
-      animation: pulse 1.5s infinite;
+
+    /* --- Botão WhatsApp flutuante e pulsante --- */
+    .whatsapp-button { /* Estilo do botão fixo no canto */
+      position: fixed; /* Fica fixo mesmo rolando a página */
+      bottom: 20px; /* Distância da borda inferior */
+      right: 20px; /* Distância da borda direita */
+      background: #25D366; /* Cor oficial do WhatsApp */
+      color: white; /* Ícone/texto branco */
+      border-radius: 50%; /* Formato circular */
+      padding: 15px; /* Tamanho do “círculo” */
+      font-size: 30px; /* Tamanho do ícone (emoji) */
+      text-align: center; /* Centraliza o conteúdo dentro do botão */
+      text-decoration: none; /* Remove sublinhado do link */
+      box-shadow: 0 4px 6px rgba(0,0,0,0.2); /* Sombra para destacar do fundo */
+      animation: pulse 1.5s infinite; /* Aplica a animação de pulsar continuamente */
     }
-    @keyframes pulse {
-      0% { transform: scale(1); }
-      50% { transform: scale(1.1); }
-      100% { transform: scale(1); }
+
+    @keyframes pulse { /* Define a animação “pulsar” */
+      0%   { transform: scale(1); }   /* Tamanho normal no início */
+      50%  { transform: scale(1.1); } /* Cresce um pouco no meio */
+      100% { transform: scale(1); }   /* Volta ao tamanho normal */
     }
-  </style>
+  </style> <!-- Fim do CSS -->
 </head>
-<body>
+
+<body> <!-- Início do conteúdo visível na página -->
+  <header> <!-- Cabeçalho com nome e slogan -->
+    <h1>WG Guinchos</h1> <!-- Nome da empresa -->
+    <p>Profissionalismo, Dedicação e Compromisso 24h</p> <!-- Slogan/resumo -->
+  </header>
+
+  <section> <!-- Primeira seção: Sobre Nós -->
+    <h2>Sobre Nós</h2> <!-- Título da seção -->
+    <p>
+      A <strong>WG Guinchos</strong> é uma empresa jovem, com profissionais dedicados,
+      zelando pelo seu veículo em cada atendimento. Oferecemos serviços de guincho 24h,
+      7 dias por semana, com compromisso e responsabilidade.
+    </p> <!-- Texto descritivo (com <strong> para dar ênfase ao nome) -->
+  </section>
+
+  <section> <!-- Segunda seção: Serviços -->
+    <h2>Nossos Serviços</h2> <!-- Título da seção -->
+    <div class="servicos"> <!-- Container em grid para os cards -->
+      <div class="card"> <!-- Card 1 -->
+        <h3>Carros Leves e Médios</h3> <!-- Título do card -->
+        <p>Guincho para veículos de pequeno e médio porte.</p> <!-- Descrição -->
+      </div>
+
+      <div class="card"> <!-- Card 2 -->
+        <h3>Caminhonetes e 3/4</h3>
+        <p>Atendimento para caminhões 3/4, caminhonetes e SUVs.</p>
+      </div>
+
+      <div class="card"> <!-- Card 3 -->
+        <h3>Motocicletas</h3>
+        <p>Serviço rápido e seguro para transporte de motos.</p>
+      </div>
+
+      <div class="card"> <!-- Card 4 -->
+        <h3>Emergências 24h</h3>
+        <p>Atendimento emergencial em qualquer horário, todos os dias.</p>
+      </div>
+    </div> <!-- Fim do grid de serviços -->
+  </section>
+
+  <footer> <!-- Rodapé do site -->
+    <p>&copy; 2025 WG Guinchos - Todos os direitos reservados</p> <!-- Aviso simples de direitos -->
+  </footer>
+
+  <!-- Botão WhatsApp flutuante: substitua 55SEUNUMERO pelo número da empresa (ex.: 5531999999999) -->
+  <a href="https://wa.me/55SEUNUMERO" class="whatsapp-button" target="_blank" rel="noopener noreferrer">💬</a>
+  <!--
+    href: link oficial do WhatsApp (wa.me) com DDI 55 + DDD + número
+    class: aplica os estilos definidos lá em cima
+    target="_blank": abre em nova aba
+    rel="noopener noreferrer": segurança/privacidade ao abrir nova aba
+    Conteúdo "💬": emoji que serve como ícone do botão
+  -->
+</body>
   <header>
     <h1>WG Guinchos</h1>
     <p>Profissionalismo, Dedicação e Compromisso 24h</p>
   </header>
 
-  <section>
-    <h2>Sobre Nós</h2>
-    <p>
-      A <strong>WG Guinchos</strong> é uma empresa jovem, com profissionais dedicados,
-      zelando pelo seu veículo em cada atendimento. Oferecemos serviços de guincho 24h,
-      7 dias por semana, com compromisso e responsabilidade.
-    </p>
-  </section>
-
-  <section>
-    <h2>Nossos Serviços</h2>
-    <div class="servicos">
-      <div class="card">
-        <h3>Carros Leves e Médios</h3>
-        <p>Guincho para veículos de pequeno e médio porte.</p>
-      </div>
-      <div class="card">
-        <h3>Caminhonetes e 3/4</h3>
-        <p>Atendimento para caminhões 3/4, caminhonetes e SUVs.</p>
-      </div>
-      <div class="card">
-        <h3>Motocicletas</h3>
-        <p>Serviço rápido e seguro para transporte de motos.</p>
-      </div>
-      <div class="card">
-        <h3>Emergências 24h</h3>
-        <p>Atendimento emergencial em qualquer horário, todos os dias.</p>
-      </div>
+  <!-- Hero / Banner -->
+  <section class="hero">
+    <div class="hero-content">
+      <h2>Guincho 24h em qualquer lugar</h2>
+      <p>Atendimento rápido, seguro e confiável para veículos leves, pesados e motocicletas.</p>
+      <a href="https://wa.me/55SEUNUMERO" target="_blank" class="hero-button">📲 Chamar no WhatsApp</a>
     </div>
   </section>
-
-  <footer>
-    <p>&copy; 2025 WG Guinchos - Todos os direitos reservados</p>
-  </footer>
-
-  <!-- Botão WhatsApp -->
-  <a href="https://wa.me/55SEUNUMERO" class="whatsapp-button" target="_blank">💬</a>
-</body>
-</html>
+</html> <!-- Fim do documento HTML -->
