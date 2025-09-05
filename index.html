@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>WG Guinchos - Guincho 24h</title>
+  <style>
+    body {
+      margin: 0;
+      font-family: Arial, sans-serif;
+      background: #f9f9f9;
+      color: #333;
+    }
+    header {
+      background: linear-gradient(90deg, #0033cc, #cc0000);
+      color: white;
+      text-align: center;
+      padding: 20px;
+    }
+    header h1 {
+      margin: 0;
+      font-size: 2rem;
+    }
+    header p {
+      margin: 5px 0 0;
+    }
+    section {
+      padding: 40px 20px;
+      max-width: 1000px;
+      margin: auto;
+    }
+    h2 {
+      color: #0033cc;
+      text-align: center;
+      margin-bottom: 20px;
+    }
+    .servicos {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+      gap: 20px;
+    }
+    .card {
+      background: white;
+      border-radius: 10px;
+      padding: 20px;
+      box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+      text-align: center;
+    }
+    .card h3 {
+      color: #cc0000;
+    }
+    footer {
+      background: #0033cc;
+      color: white;
+      text-align: center;
+      padding: 15px;
+      margin-top: 20px;
+    }
+    /* Botão WhatsApp pulsante */
+    .whatsapp-button {
+      position: fixed;
+      bottom: 20px;
+      right: 20px;
+      background: #25D366;
+      color: white;
+      border-radius: 50%;
+      padding: 15px;
+      font-size: 30px;
+      text-align: center;
+      text-decoration: none;
+      box-shadow: 0 4px 6px rgba(0,0,0,0.2);
+      animation: pulse 1.5s infinite;
+    }
+    @keyframes pulse {
+      0% { transform: scale(1); }
+      50% { transform: scale(1.1); }
+      100% { transform: scale(1); }
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <h1>WG Guinchos</h1>
+    <p>Profissionalismo, Dedicação e Compromisso 24h</p>
+  </header>
+
+  <section>
+    <h2>Sobre Nós</h2>
+    <p>
+      A <strong>WG Guinchos</strong> é uma empresa jovem, com profissionais dedicados,
+      zelando pelo seu veículo em cada atendimento. Oferecemos serviços de guincho 24h,
+      7 dias por semana, com compromisso e responsabilidade.
+    </p>
+  </section>
+
+  <section>
+    <h2>Nossos Serviços</h2>
+    <div class="servicos">
+      <div class="card">
+        <h3>Carros Leves e Médios</h3>
+        <p>Guincho para veículos de pequeno e médio porte.</p>
+      </div>
+      <div class="card">
+        <h3>Caminhonetes e 3/4</h3>
+        <p>Atendimento para caminhões 3/4, caminhonetes e SUVs.</p>
+      </div>
+      <div class="card">
+        <h3>Motocicletas</h3>
+        <p>Serviço rápido e seguro para transporte de motos.</p>
+      </div>
+      <div class="card">
+        <h3>Emergências 24h</h3>
+        <p>Atendimento emergencial em qualquer horário, todos os dias.</p>
+      </div>
+    </div>
+  </section>
+
+  <footer>
+    <p>&copy; 2025 WG Guinchos - Todos os direitos reservados</p>
+  </footer>
+
+  <!-- Botão WhatsApp -->
+  <a href="https://wa.me/55SEUNUMERO" class="whatsapp-button" target="_blank">💬</a>
+</body>
+</html>
